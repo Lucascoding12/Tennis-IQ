@@ -1,0 +1,3 @@
+# Netlify: pass data requests through to the Tennis IQ backend (change the URL if yours differs)
+/api/*  https://tennis-iq-api.onrender.com/api/:splat  200!
+/img/*  https://tennis-iq-api.onrender.com/img/:splat  200!

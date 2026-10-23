@@ -1,0 +1,18 @@
+# Render blueprint: New > Blueprint > pick this repo. Creates the always-on API
+# with a persistent disk so downloaded data and trained models survive restarts.
+services:
+  - type: web
+    name: tennis-iq-api
+    runtime: docker
+    plan: standard           # 2 GB RAM: the data engine peaks ~600 MB. Free/starter plans are too small or sleep
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: TIQ_DATA_DIR
+        value: /var/data
+      - key: TIQ_ADMIN_TOKEN     # password for training/deleting models on the Data tab
+        generateValue: true      # Render makes one; find it under the service's Environment tab
+    disk:
+      name: tennis-iq-data
+      mountPath: /var/data
+      sizeGB: 1

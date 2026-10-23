@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tennis IQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#/h2h">TENNIS<span>IQ</span></a>
+    <nav>
+      <a href="#/h2h" data-tab="h2h">H2H</a>
+      <a href="#/billy" data-tab="billy">Billy's Model</a>
+      <a href="#/rankings" data-tab="rankings">Rankings</a>
+      <a href="#/data" data-tab="data">Data &amp; Models</a>
+    </nav>
+  </header>
+
+  <section class="search" id="search" hidden>
+    <div class="pick" data-slot="p1">
+      <input type="text" placeholder="Player 1 — e.g. Sinner" autocomplete="off">
+      <ul class="suggest"></ul>
+    </div>
+    <button id="swap" title="Swap players">⇄</button>
+    <div class="pick" data-slot="p2">
+      <input type="text" placeholder="Player 2 — e.g. Alcaraz" autocomplete="off">
+      <ul class="suggest"></ul>
+    </div>
+    <button id="go">Compare</button>
+  </section>
+
+  <main id="out"></main>
+
+  <script src="app.js?v=6"></script>
+</body>
+</html>

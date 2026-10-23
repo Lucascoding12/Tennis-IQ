@@ -1,0 +1,4 @@
+# Netlify (Git deploys): publish the website folder. The backend URL lives in
+# frontend/_redirects, so drag-and-drop deploys of that folder work the same way.
+[build]
+  publish = "frontend"
